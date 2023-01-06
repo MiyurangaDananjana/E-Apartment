@@ -1,0 +1,10 @@
+F:\E-Apartment\E_Apartments\E_Apartments\bin\Debug\E_Apartments.exe.config
+F:\E-Apartment\E_Apartments\E_Apartments\bin\Debug\E_Apartments.exe
+F:\E-Apartment\E_Apartments\E_Apartments\bin\Debug\E_Apartments.pdb
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.csproj.AssemblyReference.cache
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.Login.resources
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.Properties.Resources.resources
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.csproj.GenerateResource.cache
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.csproj.CoreCompileInputs.cache
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.exe
+F:\E-Apartment\E_Apartments\E_Apartments\obj\Debug\E_Apartments.pdb
