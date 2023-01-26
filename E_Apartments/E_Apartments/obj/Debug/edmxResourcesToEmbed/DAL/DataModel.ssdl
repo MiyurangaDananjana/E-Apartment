@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="E_APARTMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CUSTOMER_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FULL_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PHONE_NO" Type="int" />
+    <Property Name="TELEPHONE_NO" Type="int" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="E_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="E_PHONE" Type="int" />
+    <Property Name="CREATE_BY" Type="int" />
+    <Property Name="CREATE_DATE_TIME" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ROLL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ROLL" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SYSTEM_USERS_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FULL_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="SURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PHONENUMBER" Type="int" />
+    <Property Name="TELEPHONE" Type="int" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="ENAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EPHONENUMBER" Type="int" />
+    <Property Name="APARTMENT_ID" Type="int" />
+    <Property Name="SYSTEM_USER_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PASS" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="int" />
+    <Property Name="LOCK_1" Type="int" />
+    <Property Name="LAST_LOGIN_DTIME" Type="datetime" />
+    <Property Name="CREATE_EMP_ID" Type="int" />
+    <Property Name="CREATE_DTIME" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEST" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="E_APARTMENTModelStoreContainer">
+    <EntitySet Name="CUSTOMER_DETAIL" EntityType="Self.CUSTOMER_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLL" EntityType="Self.ROLL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYSTEM_USERS_DETAIL" EntityType="Self.SYSTEM_USERS_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST" EntityType="Self.TEST" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

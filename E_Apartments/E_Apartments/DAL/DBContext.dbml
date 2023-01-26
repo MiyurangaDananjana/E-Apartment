@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="E_APARTMENT" Class="DBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=E_APARTMENT;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="E_Apartments.Properties.Settings" SettingsPropertyName="E_APARTMENTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CUSTOMER_DETAIL" Member="CUSTOMER_DETAILs">
+    <Type Name="CUSTOMER_DETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NIC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHONE_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TELEPHONE_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="E_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="E_PHONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROLL" Member="ROLLs">
+    <Type Name="ROLL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROLL" Member="ROLL1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RELATIONSHIP" Member="RELATIONSHIPs">
+    <Type Name="RELATIONSHIP">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FamilyMember" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER_RELATION" Member="CUSTOMER_RELATIONs">
+    <Type Name="CUSTOMER_RELATION">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APARTMENT_CLASS" Member="APARTMENT_CLASSes">
+    <Type Name="APARTMENT_CLASS">
+      <Column Name="APARTMENT_CLASS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLASS_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYSTEM_USERS_DETAIL" Member="SYSTEM_USERS_DETAILs">
+    <Type Name="SYSTEM_USERS_DETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NIC" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PHONENUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TELEPHONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EPHONENUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SYSTEM_USER_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ROLE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCK_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LAST_LOGIN_DTIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_EMP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DTIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER_WATING_LIST" Member="CUSTOMER_WATING_LISTs">
+    <Type Name="CUSTOMER_WATING_LIST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NIC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHONE_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADD_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER_COMMENT" Member="CUSTOMER_COMMENTs">
+    <Type Name="CUSTOMER_COMMENT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMMENT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DATETIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAYMENT_METHODS" Member="PAYMENT_METHODs">
+    <Type Name="PAYMENT_METHOD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAYMENT_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APARTMENT" Member="APARTMENTs">
+    <Type Name="APARTMENT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CLASS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FLOW_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APPLICABLE_RENT" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="APPLICABLE_AMOUNT" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="APPLICABLE_DEPOSIT_AMOUNT" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="APPLICABLE_MAXIMUM_N_F_OCCUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APPLICABLE_RESERVATION_FEE" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NUMBER_AVAILABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APARTMENT_LEASE" Member="APARTMENT_LEASEs">
+    <Type Name="APARTMENT_LEASE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FRIST_RENT_AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="APP_AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEPOSITE_AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="APPLICABLE_FEE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LEASE_START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DUE_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="STATES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APPROVED_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PARKING_SPACE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PARKING_SPACE_EXTRA_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PARKING_SPACE_EXTRA_MONTHLY_RENTAL" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTALE_MONTHS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAYMENTS" Member="PAYMENTs">
+    <Type Name="PAYMENT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ARREARS_AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RECEIPT_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LEASE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APARTMENT_NAME" Member="APARTMENT_NAMEs">
+    <Type Name="APARTMENT_NAME">
+      <Column Name="AP_NAME_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="APARTMENT_NAME" Member="APARTMENT_NAME1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ADD_BY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

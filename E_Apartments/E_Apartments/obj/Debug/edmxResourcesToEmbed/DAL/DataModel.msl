@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="E_APARTMENTModelStoreContainer" CdmEntityContainer="E_APARTMENTEntities">
+    <EntitySetMapping Name="CUSTOMER_DETAIL">
+      <EntityTypeMapping TypeName="E_APARTMENTModel.CUSTOMER_DETAIL">
+        <MappingFragment StoreEntitySet="CUSTOMER_DETAIL">
+          <ScalarProperty Name="CREATE_DATE_TIME" ColumnName="CREATE_DATE_TIME" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+          <ScalarProperty Name="TELEPHONE_NO" ColumnName="TELEPHONE_NO" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="E_NAME" ColumnName="E_NAME" />
+          <ScalarProperty Name="E_PHONE" ColumnName="E_PHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TESTs">
+      <EntityTypeMapping TypeName="E_APARTMENTModel.TEST">
+        <MappingFragment StoreEntitySet="TEST">
+          <ScalarProperty Name="TEST1" ColumnName="TEST" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSTEM_USERS_DETAIL">
+      <EntityTypeMapping TypeName="E_APARTMENTModel.SYSTEM_USERS_DETAIL">
+        <MappingFragment StoreEntitySet="SYSTEM_USERS_DETAIL">
+          <ScalarProperty Name="CREATE_DTIME" ColumnName="CREATE_DTIME" />
+          <ScalarProperty Name="CREATE_EMP_ID" ColumnName="CREATE_EMP_ID" />
+          <ScalarProperty Name="LAST_LOGIN_DTIME" ColumnName="LAST_LOGIN_DTIME" />
+          <ScalarProperty Name="LOCK_1" ColumnName="LOCK_1" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="SYSTEM_USER_NAME" ColumnName="SYSTEM_USER_NAME" />
+          <ScalarProperty Name="APARTMENT_ID" ColumnName="APARTMENT_ID" />
+          <ScalarProperty Name="EPHONENUMBER" ColumnName="EPHONENUMBER" />
+          <ScalarProperty Name="ENAME" ColumnName="ENAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLLs">
+      <EntityTypeMapping TypeName="E_APARTMENTModel.ROLL">
+        <MappingFragment StoreEntitySet="ROLL">
+          <ScalarProperty Name="ROLL1" ColumnName="ROLL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -32,9 +32,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Apartment_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +65,202 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Apartment_BLL.cs" />
+    <Compile Include="BLL\Customer_BLL.cs" />
+    <Compile Include="BLL\Lease_BLL.cs" />
+    <Compile Include="BLL\System_User_BLL.cs" />
+    <Compile Include="DAL\DAO\Apartment_DAO.cs" />
+    <Compile Include="DAL\DAO\CustomerDAO.cs" />
+    <Compile Include="DAL\DAO\DbContext.cs" />
+    <Compile Include="DAL\DAO\Lease_DAO.cs" />
+    <Compile Include="DAL\DAO\System_User_DAO.cs" />
+    <Compile Include="DAL\DBContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DTO\Apartment_DTO.cs" />
+    <Compile Include="DAL\DTO\Customer_Detail_DTO.cs" />
+    <Compile Include="DAL\DTO\Customer_DTO.cs" />
+    <Compile Include="DAL\DTO\Lease_DTO.cs" />
+    <Compile Include="DAL\DTO\System_user_Detail_DTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Genaral.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Lease_Invoice_CR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lease_Invoice_CR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PaymentInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\UserDetails_CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDetails_CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UC\Appartment_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Appartment_UC.Designer.cs">
+      <DependentUpon>Appartment_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Admin_Dashbord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Admin_Dashbord.Designer.cs">
+      <DependentUpon>UC_Admin_Dashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ApartmentDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ApartmentDetails.Designer.cs">
+      <DependentUpon>UC_ApartmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_CustomerDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_CustomerDetail.Designer.cs">
+      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Lease_Approval.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Lease_Approval.Designer.cs">
+      <DependentUpon>UC_Lease_Approval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_New_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_New_User.Designer.cs">
+      <DependentUpon>UC_New_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_System_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_System_User.Designer.cs">
+      <DependentUpon>UC_System_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_WatingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_WatingList.Designer.cs">
+      <DependentUpon>UC_WatingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmApartmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmApartmentView.Designer.cs">
+      <DependentUpon>frmApartmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmApproveLease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmApproveLease.Designer.cs">
+      <DependentUpon>frmApproveLease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmAproveReject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmAproveReject.Designer.cs">
+      <DependentUpon>frmAproveReject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmClark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmClark.Designer.cs">
+      <DependentUpon>frmClark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmComment.Designer.cs">
+      <DependentUpon>frmComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmCustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmCustomerView.Designer.cs">
+      <DependentUpon>frmCustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmLease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmLease.Designer.cs">
+      <DependentUpon>frmLease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmNewAppartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmNewAppartment.Designer.cs">
+      <DependentUpon>frmNewAppartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmNewClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmNewClass.Designer.cs">
+      <DependentUpon>frmNewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmRelation.Designer.cs">
+      <DependentUpon>frmRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmUserCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmUserCheck.Designer.cs">
+      <DependentUpon>frmUserCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\frmUserUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\frmUserUI.Designer.cs">
+      <DependentUpon>frmUserUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Forms\RentalPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Forms\RentalPay.Designer.cs">
+      <DependentUpon>RentalPay.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +274,102 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\Lease_Invoice_CR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Lease_Invoice_CR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PaymentInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\UserDetails_CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserDetails_CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Appartment_UC.resx">
+      <DependentUpon>Appartment_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Admin_Dashbord.resx">
+      <DependentUpon>UC_Admin_Dashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ApartmentDetails.resx">
+      <DependentUpon>UC_ApartmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_CustomerDetail.resx">
+      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Lease_Approval.resx">
+      <DependentUpon>UC_Lease_Approval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_New_User.resx">
+      <DependentUpon>UC_New_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_System_User.resx">
+      <DependentUpon>UC_System_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_WatingList.resx">
+      <DependentUpon>UC_WatingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmApartmentView.resx">
+      <DependentUpon>frmApartmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmApproveLease.resx">
+      <DependentUpon>frmApproveLease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmAproveReject.resx">
+      <DependentUpon>frmAproveReject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmClark.resx">
+      <DependentUpon>frmClark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmComment.resx">
+      <DependentUpon>frmComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmCustomerView.resx">
+      <DependentUpon>frmCustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmLease.resx">
+      <DependentUpon>frmLease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmNewAppartment.resx">
+      <DependentUpon>frmNewAppartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmNewClass.resx">
+      <DependentUpon>frmNewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmRelation.resx">
+      <DependentUpon>frmRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmUserCheck.resx">
+      <DependentUpon>frmUserCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\frmUserUI.resx">
+      <DependentUpon>frmUserUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Forms\RentalPay.resx">
+      <DependentUpon>RentalPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DAL\DBContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\DBContext.dbml.layout">
+      <DependentUpon>DBContext.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,16 +384,86 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\City10.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\City101.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6885427.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Login_Page_Img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_Page_Img1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apartment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Apartment_Icon.ico" />
+    <None Include="Resources\pay.png" />
+    <None Include="Resources\rejected.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\sent.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\message.png" />
+    <None Include="Resources\social-media.png" />
+    <None Include="Resources\comment.png" />
+    <None Include="Resources\division %281%29.png" />
+    <None Include="Resources\buildings %282%29.png" />
+    <None Include="Resources\rent.png" />
+    <None Include="Resources\waiting.png" />
+    <None Include="Resources\padlock %282%29.png" />
+    <None Include="Resources\fast-forward.png" />
+    <None Include="Resources\data-security.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\office.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
